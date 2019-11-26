@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Furever Match</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <form>
+            <h2>Survey</h2>
+
+            <h6>What type of pet?</h6>
+
+            <div id="type-of-pet">
+                <div class="form-check">
+                    <label class="form-check-label" for="radio1">
+                        <input type="radio" class="form-check-input" id="radio1" name="optradio" value="Dog">
+                        Dog
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <label class="form-check-label" for="radio2">
+                        <input type="radio" class="form-check-input" id="radio2" name="optradio" value="Cat">
+                        Cat
+                    </label>
+                </div>
+            </div>
+        </form>
+        <br>
+        <form>
+
+            <h6>What size pet?</h6>
+
+            <div id="size-of-pet">
+                <div class="form-check">
+                    <label class="form-check-label" for="radio1">
+                        <input type="radio" class="form-check-input" id="radio1" name="optradio" value="Size">
+                        Small
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <label class="form-check-label" for="radio2">
+                        <input type="radio" class="form-check-input" id="radio2" name="optradio" value="Size">
+                        Medium
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <label class="form-check-label" for="radio1">
+                        <input type="radio" class="form-check-input" id="radio1" name="optradio" value="Size">
+                        Large
+                    </label>
+                </div>
+            </div>
+        </form>
+        <br>
+        <form>
+            <h6>What gender pet?</h6>
+
+            <div id="gender-of-pet">
+                <div class="form-check">
+                    <label class="form-check-label" for="radio1">
+                        <input type="radio" class="form-check-input" id="radio1" name="optradio" value="Gender">
+                        Female
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label" for="radio2">
+                        <input type="radio" class="form-check-input" id="radio2" name="optradio" value="Gender">
+                        Male
+                    </label>
+                </div>
+            </div>
+        </form>
+        <br>
+        <form>
+            <div id="coat-of-pet">
+                <h6>"What kind of coat?"</h6>
+                <div class="form-check">
+                    <label class="form-check-label" for="radio1">
+                        <input type="radio" class="form-check-input" id="radio1" name="optradio" value="Coat">
+                        Curly
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label" for="radio2">
+                        <input type="radio" class="form-check-input" id="radio2" name="optradio" value="Coat">
+                        Hairless
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label" for="radio1">
+                        <input type="radio" class="form-check-input" id="radio1" name="optradio" value="Coat">
+                        Long
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <label class="form-check-label" for="radio1">
+                        <input type="radio" class="form-check-input" id="radio1" name="optradio" value="Coat">
+                        Medium
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <label class="form-check-label" for="radio1">
+                        <input type="radio" class="form-check-input" id="radio1" name="optradio" value="Coat">
+                        Short
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <label class="form-check-label" for="radio1">
+                        <input type="radio" class="form-check-input" id="radio1" name="optradio" value="Coat">
+                        Wire
+                    </label>
+                </div>
+            </div>
+        </form>
+        <br>
+        <form>
+            <div id="age-of-pet">
+
+                <h6>"Preferred pet age?"</h6>
+                <div class="form-check">
+                    <label class="form-check-label" for="radio1">
+                        <input type="radio" class="form-check-input" id="radio1" name="optradio" value="Age">
+                        Baby
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <label class="form-check-label" for="radio1">
+                        <input type="radio" class="form-check-input" id="radio1" name="optradio" value="Age">
+                        Young
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <label class="form-check-label" for="radio1">
+                        <input type="radio" class="form-check-input" id="radio1" name="optradio" value="Age">
+                        Adult
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label" for="radio1">
+                        <input type="radio" class="form-check-input" id="radio1" name="optradio" value="Age">
+                        Senior
+                    </label>
+                </div>
+            </div>
+        </form>
+    </div>
+    </form>
+
+
+
+    <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+
+    </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+
+
+        $("#submit").click(function (e) {
+            e.preventDefault();
+            $.post("http://localhost:8080/api/pets",
+                {
+                    type: $("#type-of-pet input").val(),
+                    size: $("#size-of-pet input").val(),
+                    gender: $("#gender-of-pet input").val(),
+                    coat: $("#coat-of-pet").val(),
+                    age: $("#age-of-pet").val(),
+                    // environment: $("#type-of-pet input").val(),
+                }).then(function (response) {
+                    console.log(response);
+                });
+        });
+    </script>
+</body>
+
+</html>
+
+<!-- user survey to pick desired pet's attributes -->
