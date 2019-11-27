@@ -5,7 +5,11 @@ module.exports = function(sequelize, DataTypes) {
       gender: DataTypes.STRING,
       coat: DataTypes.STRING,
       age: DataTypes.STRING,
+      description: DataTypes.STRING,
+      photos: DataTypes.STRING,
     });
     return Pet;
   };
   
+
+  //add description and photos

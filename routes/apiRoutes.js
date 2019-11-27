@@ -32,19 +32,17 @@ module.exports = function (app) {
                 gender: req.body.gender,
                 coat: req.body.coat,
                 age: req.body.age,
-                description: req.body.description,
-                photos: req.body.photos
             }
         )
             .then(function (response) {
                 // Post to your database here
-                res.json(response.data.animals[0].type);
-                res.json(response.data.animals[0].size);
-                res.json(response.data.animals[0].gender);
-                res.json(response.data.animals[0].coat);
-                res.json(response.data.animals[0].age);
-                res.json(response.data.animals[0].description);
-                res.json(response.data.animals[0].photos);
+                // res.json(response.data.animals[0].type);
+                // res.json(response.data.animals[0].size);                    it doesn't appear that these are needed but leaving for the time being
+                // res.json(response.data.animals[0].gender);
+                // res.json(response.data.animals[0].coat);
+                // res.json(response.data.animals[0].age);
+                // res.json(response.data.animals[0].description);
+                // res.json(response.data.animals[0].photos);
 
                 db.Pet.create({
                     type: response.data.animals[0].type,
@@ -53,7 +51,7 @@ module.exports = function (app) {
                     coat: response.data.animals[0].coat,
                     age: response.data.animals[0].age,
                     description: response.data.animals[0].description,
-                    photos: response.data.animals[0].photos,
+                    photos: response.data.animals[0].photos,  //if this doesn't work drill to see if you can get one pic by adding:     [0].medium,
 
                 }).then(function (newPet) {
                     // We have access to the new pet as an argument inside of the callback function
