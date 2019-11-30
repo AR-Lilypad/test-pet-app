@@ -5,20 +5,21 @@
 // Dependencies
 // =============================================================
 // add code to read and set any environment variables with the dotenv package
-// require("dotenv").config();
+require("dotenv").config();
 // console.log(process.env);
 
 let petfinder = require("@petfinder/petfinder-js");
-let client = new petfinder.Client({apiKey: "EGc3gxBpk6teIzgELn3yobiuQzodUCyieJnvK8zEj633m76rEz", secret: "TJgV9Um001Akix3x70lcFD1eO3gIQX7aAIBlIMUB"});
+// let client = new petfinder.Client({apiKey: "EGc3gxBpk6teIzgELn3yobiuQzodUCyieJnvK8zEj633m76rEz", secret: "TJgV9Um001Akix3x70lcFD1eO3gIQX7aAIBlIMUB"});
 
 // Add the code required to import the `keys.js` file and store it in a variable
-// const keys = require("keys.js");
-// let client = new petfinder.Client(keys.petfinder);
+const keys = require("../keys.js");
+let client = new petfinder.Client(keys.petfinder);
 
 // dependency
 
 // Requiring our pet model
 let db = require("../models");
+
 
 // Routes
 // =============================================================
@@ -51,7 +52,7 @@ module.exports = function (app) {
                     coat: response.data.animals[0].coat,
                     age: response.data.animals[0].age,
                     description: response.data.animals[0].description,
-                    photos: response.data.animals[0].photos,  //if this doesn't work drill to see if you can get one pic by adding:     [0].medium,
+                    photos: response.data.animals[0].photos[0].medium,  //if this doesn't work drill to see if you can get one pic by adding:     [0].medium,
 
                 }).then(function (newPet) {
                     // We have access to the new pet as an argument inside of the callback function
