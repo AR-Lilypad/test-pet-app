@@ -175,7 +175,7 @@
 
         $("#submit").click(function (e) {
             e.preventDefault();
-            console.log($("#size-of-pet input").val());
+            console.log($("#type-of-pet input").val());
             $.post("http://localhost:8080/api/pets",
                 {
                     type: $("input[name='type']:checked").val(),
